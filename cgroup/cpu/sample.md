@@ -6,7 +6,9 @@ operation should be done under root user
 
 ```
 su
+
 mkdir /sys/fs/cgroup/cpuset/0cpu
+
 echo 0 > /sys/fs/cgroup/cpuset/0cpu/cpuset.cpus
 echo 0 > /sys/fs/cgroup/cpuset/0cpu/cpuset.mems
 
@@ -18,6 +20,7 @@ will limit ${PID} to cpu 0
 
 ```
 su
+
 mkdir /sys/fs/cgroup/cpu/10percent
 mkdir /sys/fs/cgroup/cpu/20percent
 
@@ -39,7 +42,7 @@ run cpu consumer DIY or from lct-utils
 do the following will see cpu usage limited
 
 ```
-echo ${PID} > /sys/fs/cgroup/cpu/20percent/tasks
+echo ${PID} > /sys/fs/cgroup/cpu/10percent/tasks
 echo ${PID} > /sys/fs/cgroup/cpu/20percent/tasks
 ```
 
