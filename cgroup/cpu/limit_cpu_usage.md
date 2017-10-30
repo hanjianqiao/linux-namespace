@@ -1,22 +1,4 @@
-# limit cpu usage sample
-
-operation should be done under root user
-
-## limit cpu core usage
-
-```
-su
-
-mkdir /sys/fs/cgroup/cpuset/0cpu
-
-echo 0 > /sys/fs/cgroup/cpuset/0cpu/cpuset.cpus
-echo 0 > /sys/fs/cgroup/cpuset/0cpu/cpuset.mems
-
-echo ${PID} > /sys/fs/cgroup/cpuset/0cpu/tasks
-```
-will limit ${PID} to cpu 0
-
-## limit cpu usage within group
+# Limit CPU percentage
 
 ```
 su
